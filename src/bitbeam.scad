@@ -35,11 +35,15 @@ module beam(number_of_holes) {
 module beam_to(start=[0,0,0], length=5, direction=[0,0,0]){
   translate(start * beam_width){
     rotate(direction){
-     beam(length);
+	 translate([0, 0, -beam_width/2]){ // rotate around middle of beam
+       beam(length);
+     }
 	}
   }
 }
 
 beam_to();
+
+beam_to(direction=[0,90,0]);
 
 
