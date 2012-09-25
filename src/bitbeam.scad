@@ -31,4 +31,15 @@ module beam(number_of_holes) {
         }
 }
 
-beam(13);
+
+module beam_to(start=[0,0,0], length=5, direction=[0,0,0]){
+  translate(start * beam_width){
+    rotate(direction){
+     beam(length);
+	}
+  }
+}
+
+beam_to();
+
+
