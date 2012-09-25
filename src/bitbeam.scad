@@ -43,6 +43,7 @@ module beam_to(start=[0,0,0], length=5, direction=[0,0,0]){
 }
 
 module screw(start=[0,0,0], length=2, direction=[0,0,0]){
+  color("lavender"){
   translate(start * beam_width){
     rotate(direction){
 	 translate([0, 0, -beam_width/2]){ // rotate around middle of beam
@@ -63,6 +64,7 @@ module screw(start=[0,0,0], length=2, direction=[0,0,0]){
      }
 	}
   } 
+  }
 }
 
 
