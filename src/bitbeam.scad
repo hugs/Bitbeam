@@ -42,8 +42,32 @@ module beam_to(start=[0,0,0], length=5, direction=[0,0,0]){
   }
 }
 
-beam_to();
+module screw(start=[0,0,0], length=2, direction=[0,0,0]){
+  translate(start * beam_width){
+    rotate(direction){
+	 translate([0, 0, -beam_width/2]){ // rotate around middle of beam
+       
+      cylinder(r=2.2, h=length*beam_width + beam_width/2, $fn=30);
+       
+	   translate([0,0,-3]) //Screw head
+		 difference(){
+           cylinder(r1=3, r2=4, h=3, $fn=30);
+		    translate([-4.5, -0.5, -0.1]){
+              cube([9,1,2]);
+            }
+         }
+	   translate([0,0, length*beam_width + 0.2]){
+	     cylinder(r=5, h=2, $fn=6);
+       }
 
-beam_to(direction=[0,90,0]);
+     }
+	}
+  } 
+}
+
+
+beam_to();
+beam_to([0,1,0], direction=[0,90,0]);
+screw(direction=[-90,0,0]);
 
 
