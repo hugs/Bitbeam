@@ -15,8 +15,8 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 module MountingHoles()
 {
-	cylinder(r=1.5, h=1, $fn=25);
+	circle(r=1.5, $fn=25);
 
 	translate([54.5,25.5,0])
-	cylinder(r=1.5, h=1, $fn=25);
+	circle(r=1.5, $fn=25);
 }

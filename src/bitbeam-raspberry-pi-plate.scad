@@ -14,24 +14,22 @@ use <raspberry-pi.scad>
 
 beam_width = 7.9375;   // 5/16 inches
 
-projection(cut=true) {
-    difference(){
+difference(){
 
         // Base plate
-        cube([8*11, beam_width * 9, 1]);
+        square([8*11, beam_width * 9]);
 	
         // Bottom row
         for (x=[8 : 8 : beam_width * 12]) {
-            translate([x-4, beam_width/2, -10])
-            cylinder(r=2.4, h=20, $fn=25);
+            translate([x-4, beam_width/2, 0])
+            circle(r=2.4, $fn=25);
         }
 	
         // Top row
         for (x=[8 : 8 : beam_width * 12]) {
-            translate([x-4, (beam_width/2) + beam_width * 8, -10])
-            cylinder(r=2.4, h=20, $fn=25);
+            translate([x-4, (beam_width/2) + beam_width * 8, 0])
+            circle(r=2.4, $fn=25);
 	   }
 
         translate([25.5,26,0]) MountingHoles();
-    }
 }
