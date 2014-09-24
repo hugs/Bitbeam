@@ -4,38 +4,38 @@ use <bitbeam.scad>;
 // FIXME: realize 5/16in is 7.9375mm
 
 for (x=[0:8*1+8:200]) {
-	translate([x,0,0]) beam(1);
+	translate([x,0,0]) beam_3d(1);
 }
 
 for (x=[0:8*2+8:550]) {
-	translate([x,12*1,0]) beam(2);
+	translate([x,12*1,0]) beam_3d(2);
 }
 
 for (x=[0:8*3+8:550]) {
-	translate([x,12*2,0]) beam(3);
+	translate([x,12*2,0]) beam_3d(3);
 }
 
 for (x=[0:8*5+8:550]) {
-	translate([x,12*3,0]) beam(5);
+	translate([x,12*3,0]) beam_3d(5);
 }
 
 for (x=[0:8*7+8:550]) {
-	translate([x,12*4,0]) beam(7);
+	translate([x,12*4,0]) beam_3d(7);
 }
 
 for (x=[0:8*9+8:500]) {
-	translate([x,12*5,0]) beam(9);
+	translate([x,12*5,0]) beam_3d(9);
 }
 
 for (x=[0:8*11+8:500]) {
-	translate([x,12*6,0]) beam(11);
+	translate([x,12*6,0]) beam_3d(11);
 }
 
 for (x=[0:8*13+8:500]) {
-	translate([x,12*7,0]) beam(13);
+	translate([x,12*7,0]) beam_3d(13);
 }
 
 for (x=[0:230:400]) {
-	translate([x,12*8,0]) beam(27);
+	translate([x,12*8,0]) beam_3d(27);
 }
 

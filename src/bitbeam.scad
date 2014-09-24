@@ -25,4 +25,24 @@ module beam(number_of_holes) {
     }
 }
 
+module beam_3d(number_of_holes) {
+    beam_length = number_of_holes * 8;
+    difference(){
+         // Draw the beam
+         translate([-4, -beam_width/2, -beam_width/2])
+         cube([beam_length, beam_width, beam_width]);
+
+         // Cut the holes
+         for (x=[4 : 8 : beam_length]) {
+             translate([x-4, 0, -beam_width])
+             cylinder(r=2.4, h=beam_width*2, $fn=30);
+         }
+         for (x=[4 : 8 : beam_length]) {
+             rotate([90,0,0])
+             translate([x-4, 0, -beam_width])
+             cylinder(r=2.4, h=beam_width*2, $fn=30);
+         }
+    }
+}
+
 beam(13);
