@@ -1,6 +1,8 @@
 use <bitbeam.scad>;
 
 // TODO: make the 1x1 bitbeams precisely 5/16 square. Not the current 5/16in by 8mm.
+// FIXME: realize 5/16in is 7.9375mm
+
 for (x=[0:8*1+8:200]) {
 	translate([x,0,0]) beam(1);
 }
